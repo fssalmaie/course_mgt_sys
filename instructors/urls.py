@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from instructors import views
 
 
 urlpatterns = [
-    url(r'^registor/$', views.InstructorRegister.as_view(),
+    url(r'^register/$', views.InstructorRegister.as_view(),
         name='instructor_register',),
 ]
