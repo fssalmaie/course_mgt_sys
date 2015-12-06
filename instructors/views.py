@@ -40,14 +40,14 @@ class InstructorEditProfile(UpdateView):
 def appointment_create(request, pk):
     inst = get_object_or_404(Instructor, pk=pk)
     if request.method == 'POST':
-        form = AppointmentForm(request.POST, instance=inst)
+        form = AppointmentForm(request.POST)
         if form.is_valid():
 
             form.save()
 
             return redirect('appointment_list')
     else:
-        form = AppointmentForm(instance=inst)
+        form = AppointmentForm()
 
     return render(
         request,
