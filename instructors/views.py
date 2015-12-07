@@ -47,7 +47,7 @@ def appointment_create(request, pk):
 
             return redirect('appointment_list')
     else:
-        form = AppointmentForm()
+        form = AppointmentForm(initial={'instructor': pk, })
 
     return render(
         request,
